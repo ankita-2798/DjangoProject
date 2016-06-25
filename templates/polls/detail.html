@@ -1,0 +1,21 @@
+<body>
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'polls/detail.css' %}">
+<div class="header">
+<img src="{{STATIC_URL}}polls/images/IITR.jpeg" alt="IITR" id="IITR">
+<span id="h1">IMG Polls</span>
+<img src="{{STATIC_URL}}polls/images/IMG.jpeg" alt="IMG" id="IMG">
+</div>
+{% if error_message %}<p><strong>{{error_message}}</strong></p>{% endif%}
+<div class="body">
+<h2 id="h2">{{question.question_text}}</h2>
+<form action="{% url 'polls:vote' question.id%}" method="post">
+{%csrf_token%}
+{% for choice in question.choice_set.all %}
+<div class="choice"><input type="radio" name="choice" value="{{choice.id}}">{{choice.choice_text}}</input></div>
+<br>
+{%endfor%}
+<input type="submit" name="Submit" value=" Vote " class="button"></input>
+</div>
+</form>
+</body>

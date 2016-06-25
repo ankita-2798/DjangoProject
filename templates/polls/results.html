@@ -1,0 +1,18 @@
+<body>
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'polls/results.css' %}">
+<div class="header">
+<img src="{{STATIC_URL}}polls/images/IITR.jpeg" alt="IITR" id="IITR">
+<span id="h1">IMG Polls</span>
+<img src="{{STATIC_URL}}polls/images/IMG.jpeg" alt="IMG" id="IMG">
+</div>
+<div class="body">
+<h2 id="h2">{{question.question_text}}</h2>
+<ul>
+{% for choice in question.choice_set.all %}
+<li>{{choice.choice_text}}-- {{choice.votes}}vote{{ choice.votes|pluralize }}</li>
+{% endfor %}
+</ul>
+<a href="{%url 'polls:detail' question.id%}" class="link">Vote Again?</a>
+</div>
+</body>

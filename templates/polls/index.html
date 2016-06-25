@@ -1,0 +1,22 @@
+<html>
+<body>
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'polls/index.css' %}">
+{% if latest_question_list %}
+	<div class="header">
+	<img src="{{STATIC_URL}}polls/images/IITR.jpeg" alt="IITR" id="IITR">
+	<span id="h1">IMG Polls</span>
+	<img src="{{STATIC_URL}}polls/images/IMG.jpeg" alt="IMG" id="IMG">
+	</div>
+	<div class="body">
+	<ul>
+	{% for question in latest_question_list %}
+	<div class="ques"><li><a href="{% url 'polls:detail' question.id %}">{{question.question_text}}</a></li></div>
+	{% endfor %}
+	</ul>
+	</div>
+	{% else %}
+	<p class="error"> No Polls available.<p>
+	{% endif %}
+</body>
+</html>
