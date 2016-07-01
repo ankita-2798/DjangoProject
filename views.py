@@ -34,8 +34,6 @@ def vote(request,question_id):
 	return HttpResponseRedirect(reverse('polls:results',args=(p.id,)))
 def call_signup(request):
 	return render(request,'polls/signup.html/')
-def call_login(request):
-	return render(request,'polls/login.html/')
 def create_user(request):
 	username=request.POST['username']
 	firstname=request.POST['firstname']
@@ -47,6 +45,8 @@ def create_user(request):
 	user.last_name=lastname
 	user.save()
 	return HttpResponseRedirect(reverse('polls:index'))
+def call_login(request):
+	return render(request,'polls/login.html/')
 def verify_user(request):
 	username = request.POST['username']
 	password = request.POST['password']
@@ -54,8 +54,18 @@ def verify_user(request):
 	if user is not None:
 		if user.is_active:
 			login(request,user)
-			return HttpResponse("U r logged in.")
+			return HttpResponseRedirect(reverse('polls:index'))
 		else:
 			return HttpResponse("The account has been disabled.")
 	else:
 		return HttpResponse("The username-password combination is incorrect.")
+def call_changepassword(request):
+	return render(request,'polls/changepassword.html/')
+def save_password(request):
+	password1=request.POST['password1']
+	password2=request.POST['password2']
+	if password1!=password2:
+		return render(request,'polls/changepassword.html/')
+	else:
+		return HttpResponseRedirect(reverse('polls:index'))
+	
