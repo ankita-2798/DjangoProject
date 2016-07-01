@@ -1,5 +1,5 @@
-<p>{{user.get_username}}</p>
-<form action="{%url 'polls:save_changes'%}"method="post">
+<p>Hello {{user.get_username}}</p>
+<form action="{%url 'polls:save_profile'%}"method="post">
 {%csrf_token%}
 <table>
 <tr>
