@@ -68,4 +68,8 @@ def save_password(request):
 		return render(request,'polls/changepassword.html/')
 	else:
 		return HttpResponseRedirect(reverse('polls:index'))
+def call_editprofile(request):
+	return render(request,'polls/editprofile.html
+
+
 	
