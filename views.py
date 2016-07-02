@@ -62,14 +62,30 @@ def verify_user(request):
 def call_changepassword(request):
 	return render(request,'polls/changepassword.html/')
 def save_password(request):
+	user=request.user
+	username=request.user.username
+	oldpassword=request.POST['oldpassword']
 	password1=request.POST['password1']
 	password2=request.POST['password2']
-	if password1!=password2:
-		return render(request,'polls/changepassword.html/')
+	test_user= authenticate(username=username, password=oldpassword)
+	if test_user is None:
+		return render(request,'polls/changepassword.html/',{'message':'The existing password was incorrect.'})
 	else:
-		return HttpResponseRedirect(reverse('polls:index'))
+		if password1!=password2:
+			return render(request,'polls/changepassword.html/',{'message':'The entered passwords did not match.'})
+		else:
+			if password1:
+				user.set_password(password1)
+				user.save()
+				return render(request,'polls/changepassword.html/',{'message':'The password was successfully changed.'})
+			else:
+				return render(request,'polls/changepassword.html/',{'message':'Null passwords not accepted.'})
 def call_editprofile(request):
-	return render(request,'polls/editprofile.html
-
+	return render(request,'polls/editprofile.html')
+def save_profile(request):
+	email=request.POST['email']
+	firstname=request.POST['firstname']
+	lastname=request.POST['lastname']
+	
 
 	
