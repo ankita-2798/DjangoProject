@@ -4,7 +4,7 @@ from django.core.urlresolvers import reverse
 from django.views import generic
 from polls.models import Question,Choice
 from django.utils import timezone
-from django.contrib.auth import authenticate,login
+from django.contrib.auth import authenticate,login,logout
 from mysite import settings
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
@@ -95,6 +95,9 @@ def save_profile(request):
 		user.last_name=lastname
 	user.save()
 	return render(request,'polls/editprofile.html/',{'message':'The changes for non-null fields have been successfully made.'})
+def log_out(request):
+	logout(request)
+	return HttpResponseRedirect(reverse('polls:call_login'))
 	
 	
 	
