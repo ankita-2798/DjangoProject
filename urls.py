@@ -14,4 +14,5 @@ urlpatterns=patterns('',
 					url(r'^savepassword/$', views.save_password, name='save_password'),
 					url(r'^editprofile/$', views.call_editprofile, name='call_editprofile'),
 					url(r'^saveprofile/$', views.save_profile, name='save_profile'),
+					url(r'^logout/$', views.log_out, name='log_out'),
 )
