@@ -86,6 +86,17 @@ def save_profile(request):
 	email=request.POST['email']
 	firstname=request.POST['firstname']
 	lastname=request.POST['lastname']
+	user=request.user
+	if email:
+		user.email=email
+	if firstname:
+		user.first_name=firstname
+	if lastname:
+		user.last_name=lastname
+	user.save()
+	return render(request,'polls/editprofile.html/',{'message':'The changes for non-null fields have been successfully made.'})
+	
+	
 	
 
 	
