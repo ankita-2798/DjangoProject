@@ -1,0 +1,99 @@
+body
+{
+background-image:url("images/abstract-grey-wallpaper03.jpg");
+background-size:cover;
+background-repeat: no-repeat;
+background-position:center center;
+}
+.body
+{
+border:2px ridge #DCDCDC;
+border-radius:20px;
+height:300px;
+width:500px;
+margin:auto;
+position:absolute;
+top:0;
+bottom:0;
+right:0;
+left:0;
+font-size:150%;
+
+}
+.header
+{
+	padding:10px;
+	border:2px ridge #DCDCDC;
+	border-radius:20px;
+}
+#IITR
+{
+	float:left;
+	height:70px;
+	width:70px;
+}
+#h1
+{	
+	font-size:60px;
+	margin-left:35%;
+	color:white;
+}
+#IMG
+{
+	float:right;
+	height:70px;
+	width:70px;
+}
+#h2
+{
+	color:white;
+	text-align:center;
+	font-size:150%;
+	margin-top:10px;
+	margin-bottom:10px;
+}
+.button
+{
+	background-color: Transparent;
+	border: 2px ridge #DCDCDC;
+	color:white;
+	font-size:80%;
+	padding:6px;
+	border-radius:6px;
+	margin-left:40%;
+	margin-top:3%;
+}
+.button:hover
+{
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.button:active
+{
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+	transform: translateY(4px);
+}
+.table
+{
+margin-top:-270px;	
+font-size:100%;
+color:white;
+margin-left:70px;
+}
+.text_box
+{
+	background-color: Transparent;
+	border: 2px ridge #DCDCDC;
+	color:white;
+	font-size:80%;
+	border-radius:6px;
+}
+.extra
+{
+	color:white;
+	margin-left:23%;
+	margin-top:10%;
+}
+#login
+{
+	margin-top: 1%;
+}
