@@ -6,6 +6,7 @@
 <span id="h1">IMG Polls</span>
 <img src="{{STATIC_URL}}polls/images/IMG.jpeg" alt="IMG" id="IMG">
 </div>
+{% if message %}<p class="message"><strong>{{message}}</strong></p>{% endif%}
 <div class="body">
 <h2 id="h2">Log In</h2>
 <form action="{%url 'polls:verify_user'%}" method="post">
@@ -25,5 +26,8 @@
 <p class="extra">Donot have an account?</p>
 <input type="submit" name="Submit" value=" Sign Up " class="button" id="login"></input>
 </form>
+</div>
+<div class="foot">
+&copy Ankita@IMG 16
 </div>
 </body>

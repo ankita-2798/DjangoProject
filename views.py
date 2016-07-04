@@ -56,9 +56,9 @@ def verify_user(request):
 			login(request,user)
 			return HttpResponseRedirect(reverse('polls:index'))
 		else:
-			return HttpResponse("The account has been disabled.")
+			return render(request,'polls/login.html/',{'message':'The account has been disabled.'})
 	else:
-		return HttpResponse("The username-password combination is incorrect.")
+		return render(request,'polls/login.html/',{'message':'The username-password combination is incorrect.'})
 @login_required
 def call_changepassword(request):
 	return render(request,'polls/changepassword.html/')
@@ -71,7 +71,7 @@ def save_password(request):
 	password2=request.POST['password2']
 	test_user= authenticate(username=username, password=oldpassword)
 	if test_user is None:
-		return render(request,'polls/changepassword.html/',{'message':'The existing password was incorrect.'})
+		return render(request,'polls/changepassword.html/',{'message':'The existing password is incorrect.'})
 	else:
 		if password1!=password2:
 			return render(request,'polls/changepassword.html/',{'message':'The entered passwords did not match.'})
@@ -79,7 +79,7 @@ def save_password(request):
 			if password1:
 				user.set_password(password1)
 				user.save()
-				return render(request,'polls/changepassword.html/',{'message':'The password was successfully changed.'})
+				return render(request,'polls/changepassword.html/',{'message':'The password has been successfully changed.'})
 			else:
 				return render(request,'polls/changepassword.html/',{'message':'Null passwords not accepted.'})
 @login_required
