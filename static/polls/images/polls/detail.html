@@ -6,8 +6,7 @@
 <span id="h1">IMG Polls</span>
 <img src="{{STATIC_URL}}polls/images/IMG.jpeg" alt="IMG" id="IMG">
 </div>
-<p class="heading">Hello {{user.get_username}}</p>
-{% if message %}<p class="message"><strong>{{message}}</strong></p>{% endif%}
+{% if error_message %}<p><strong>{{error_message}}</strong></p>{% endif%}
 <div class="body">
 <h2 id="h2">{{question.question_text}}</h2>
 <form action="{% url 'polls:vote' question.id%}" method="post">

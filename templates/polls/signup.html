@@ -1,23 +1,38 @@
-<form>
-<table>
+<body>
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'polls/signup.css' %}">
+<div class="header">
+<img src="{{STATIC_URL}}polls/images/IITR.jpeg" alt="IITR" id="IITR">
+<span id="h1">IMG Polls</span>
+<img src="{{STATIC_URL}}polls/images/IMG.jpeg" alt="IMG" id="IMG">
+</div>
+<div class="body">
+<h2 id="h2">Sign Up</h2>
+<form action="{%url 'polls:create_user'%}" method="post">
+{%csrf_token%}
+<table class="table">
 <tr>
-<td>Username</td><td><input type="text" name="username"></td><br><br>
+<td>Username</td><td><input type="text" name="username" class="text_box"></td><br><br>
 </tr>
 <tr>
-<td>Password</td> <td><input type="password" name="password"></td><br><br>
+<td>Password</td> <td><input type="password" name="password" class="text_box"></td><br><br>
 </tr>
 <tr>
-<td>Email</td><td><input type="email" name="email"></td><br><br>
+<td>Email</td><td><input type="email" name="email" class="text_box"></td><br><br>
 </tr>
 <tr>
-<td>First Name</td><td><input type="text" name="firstname"></td><br><br>
+<td>First Name</td><td><input type="text" name="firstname" class="text_box"></td><br><br>
 </tr>
 <tr>
-<td>Last Name</td><td><input type="text" name="lastname"></td><br><br>
+<td>Last Name</td><td><input type="text" name="lastname" class="text_box"></td><br><br>
 </tr>
 </table>
-<button class="button" value="Sign Up" name="signup" onclick="">Sign Up</button>&nbsp
-<button class="button" value="Log In" name="login" onclick="">Log In</button>
+<input type="submit" name="Submit" value=" Sign Up " class="button"></input>
 </form>
-
-
+<form action="{%url 'polls:call_login'%}"method="post">
+{%csrf_token%}
+<p class="extra">Already Have an Account?</p>
+<input type="submit" name="Submit" value=" Log In " class="button" id="login"></input>
+</form>
+</div>
+</body>

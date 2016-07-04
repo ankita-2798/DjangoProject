@@ -52,7 +52,7 @@ ul
 	left:0;
 	padding:0;
 }
-ul li, a:link,a:active, a:visited
+ul li, a.options:link,a.options:active, a.options:visited
 {
 	margin:20px;
 	border:0.5px ridge white;
@@ -64,7 +64,7 @@ ul li, a:link,a:active, a:visited
 	color:black;
 	border-radius:10px;
 }
-a:hover
+a.options:hover
 {
 	margin:20px;
 	border:0.5px ridge #DCDCDC;
@@ -74,4 +74,34 @@ a:hover
 	padding-left:10px;
 	text-decoration: none;
 	color:black;
+}
+a.link:link,a.link:active, a.link:visited
+{	
+	border:2px ridge #DCDCDC;
+	padding:10px;
+	font-size:100%;
+	background-color:Transparent;
+	text-decoration: none;
+	color:white;
+	border-radius:4px;
+}
+a.link:hover
+{
+	border:2px ridge #DCDCDC;
+	padding:10px;
+	font-size:100%;
+	background-color:#DCDCDC;
+	text-decoration: none;
+	color:black;
+	border-radius:4px;
+}
+.heading
+{
+	font-size:200%;
+	color:white;
+}
+.message
+{
+font-size:120%;
+color:red;	
 }

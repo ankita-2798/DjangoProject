@@ -1,0 +1,27 @@
+<body>
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'polls/editprofile.css' %}">
+<div class="header">
+<img src="{{STATIC_URL}}polls/images/IITR.jpeg" alt="IITR" id="IITR">
+<span id="h1">IMG Polls</span>
+<img src="{{STATIC_URL}}polls/images/IMG.jpeg" alt="IMG" id="IMG">
+</div>
+<p class="heading">Hello {{user.get_username}}</p>
+{% if message %}<p class="message"><strong>{{message}}</strong></p>{% endif%}
+<div class="body">
+<h2 id="h2">Edit Profile</h2>
+<form action="{%url 'polls:save_profile'%}"method="post">
+{%csrf_token%}
+<table class="table">
+<tr>
+<td class="row">Email</td><td class="row"><input type="email" name="email" class="text_box"></td><br><br>
+</tr>
+<tr>
+<td class="row">First Name</td><td class="row"><input type="text" name="firstname" class="text_box"></td><br><br>
+</tr>
+<tr>
+<td class="row">Last Name</td><td class="row"><input type="text" name="lastname" class="text_box"></td><br><br>
+</tr>
+</table>
+<input type="submit" name="Submit" value=" Save Changes " class="button"></input>
+</form>
