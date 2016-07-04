@@ -8,7 +8,7 @@
 	<span id="h1">IMG Polls</span>
 	<img src="{{STATIC_URL}}polls/images/IMG.jpeg" alt="IMG" id="IMG">
 	</div>
-	<p>Hello {{user.get_username}}</p>
+	<p class="heading">Hello {{user.get_username}}</p>
 	<div class="body">
 	<ul>
 	{% for question in latest_question_list %}
@@ -17,7 +17,7 @@
 	</ul>
 	</div>
 	{% else %}
-	<p class="error"> No Polls available.<p>
+	<p class="message"> No Polls available.<p>
 	{% endif %}
 	<a href="{% url 'polls:call_editprofile' %}" class="link" id="edit profile">Edit Profile</a>
 	<a href="{% url 'polls:call_changepassword' %}" class="link" id="change password">Change Password</a>
