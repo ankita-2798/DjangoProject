@@ -27,7 +27,7 @@ def vote(request,question_id):
 	try:
 		selected_choice=p.choice_set.get(pk=request.POST['choice'])
 	except(KeyError,Choice.DoesNotExist):
-		return render(request,'polls/detail.html/',{'question':p,'error_message':"You didn't select a choice."})
+		return render(request,'polls/detail.html/',{'question':p,'message':"You didn't select a choice."})
 	else:
 		selected_choice.votes+=1
 		selected_choice.save()
@@ -59,8 +59,10 @@ def verify_user(request):
 			return HttpResponse("The account has been disabled.")
 	else:
 		return HttpResponse("The username-password combination is incorrect.")
+@login_required
 def call_changepassword(request):
 	return render(request,'polls/changepassword.html/')
+@login_required
 def save_password(request):
 	user=request.user
 	username=request.user.username
@@ -80,8 +82,10 @@ def save_password(request):
 				return render(request,'polls/changepassword.html/',{'message':'The password was successfully changed.'})
 			else:
 				return render(request,'polls/changepassword.html/',{'message':'Null passwords not accepted.'})
+@login_required
 def call_editprofile(request):
 	return render(request,'polls/editprofile.html')
+@login_required
 def save_profile(request):
 	email=request.POST['email']
 	firstname=request.POST['firstname']

@@ -2,9 +2,9 @@ from django.conf.urls import patterns,url
 from polls import views
 from django.contrib.auth.decorators import login_required
 urlpatterns=patterns('',
-					url(r'^$',views.IndexView.as_view(),name='index'),
-					url(r'^(?P<pk>\d+)/$',views.DetailView.as_view(),name='detail'),
-					url(r'^(?P<pk>\d+)/results/$',views.ResultsView.as_view(),name='results'),
+					url(r'^$',login_required(views.IndexView.as_view()),name='index'),
+					url(r'^(?P<pk>\d+)/$',login_required(views.DetailView.as_view()),name='detail'),
+					url(r'^(?P<pk>\d+)/results/$',login_required(views.ResultsView.as_view()),name='results'),
 					url(r'^(?P<question_id>\d+)/vote/$',views.vote,name='vote'),
 					url(r'^signup/$', views.call_signup, name='call_signup'),
 					url(r'^login/$', views.call_login, name='call_login'),
