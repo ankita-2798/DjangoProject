@@ -14,14 +14,22 @@
 {%csrf_token%}
 <table class="table">
 <tr>
-<td class="row">Email</td><td class="row"><input type="email" name="email" class="text_box"></td><br><br>
+<td class="row">Email</td><td class="row"><input type="email" name="email" class="text_box" value="{{user.email}}"></td><br><br>
 </tr>
 <tr>
-<td class="row">First Name</td><td class="row"><input type="text" name="firstname" class="text_box"></td><br><br>
+<td class="row">First Name</td><td class="row"><input type="text" name="firstname" class="text_box" value="{{user.first_name}}"></td><br><br>
 </tr>
 <tr>
-<td class="row">Last Name</td><td class="row"><input type="text" name="lastname" class="text_box"></td><br><br>
+<td class="row">Last Name</td><td class="row"><input type="text" name="lastname" class="text_box" value="{{user.last_name}}"></td><br><br>
 </tr>
 </table>
 <input type="submit" name="Submit" value=" Save Changes " class="button"></input>
 </form>
+</div>
+<div class="button-links">
+<a href="{%url 'polls:index'%}" class="link" id="index">View Index</a>
+</div>
+<div class="foot">
+&copy Ankita@IMG 16
+</div>
+</body>
