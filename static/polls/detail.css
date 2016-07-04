@@ -94,3 +94,35 @@ font-size:150%;
 font-size:120%;
 color:red;	
 }
+a.link:link,a.link:active, a.link:visited
+{	
+	border:2px ridge #DCDCDC;
+	padding:10px;
+	font-size:100%;
+	background-color:Transparent;
+	text-decoration: none;
+	color:white;
+	border-radius:4px;
+}
+a.link:hover
+{
+	border:2px ridge #DCDCDC;
+	padding:10px;
+	font-size:100%;
+	background-color:#DCDCDC;
+	text-decoration: none;
+	color:black;
+	border-radius:4px;
+}
+.foot
+{
+background-color:Transparent;
+text-align:center;
+position:fixed;
+bottom:0;
+width:98%;
+color:white;
+padding:7px;
+border:2px ridge #DCDCDC;
+border-radius:10px;
+}

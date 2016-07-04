@@ -97,3 +97,15 @@ margin-left:70px;
 {
 	margin-top: 0.5%;
 }
+.foot
+{
+background-color:Transparent;
+text-align:center;
+position:fixed;
+bottom:0;
+width:98%;
+color:white;
+padding:7px;
+border:2px ridge #DCDCDC;
+border-radius:10px;
+}

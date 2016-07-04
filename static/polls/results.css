@@ -18,7 +18,6 @@ bottom:0;
 right:0;
 left:0;
 font-size:150%;
-
 }
 .header
 {
@@ -79,4 +78,36 @@ ul li
 {
 	font-size:200%;
 	color:white;
+}
+a.lin:link,a.lin:active, a.lin:visited
+{	
+	border:2px ridge #DCDCDC;
+	padding:10px;
+	font-size:100%;
+	background-color:Transparent;
+	text-decoration: none;
+	color:white;
+	border-radius:4px;
+}
+a.lin:hover
+{
+	border:2px ridge #DCDCDC;
+	padding:10px;
+	font-size:100%;
+	background-color:#DCDCDC;
+	text-decoration: none;
+	color:black;
+	border-radius:4px;
+}
+.foot
+{
+background-color:Transparent;
+text-align:center;
+position:fixed;
+bottom:0;
+width:98%;
+color:white;
+padding:7px;
+border:2px ridge #DCDCDC;
+border-radius:10px;
 }

@@ -16,4 +16,10 @@
 </ul>
 <a href="{%url 'polls:detail' question.id%}" class="link">Vote Again?</a>
 </div>
+<a href="{% url 'polls:call_editprofile' %}" class="lin" id="edit profile">Edit Profile</a><br><br><br><br>
+<a href="{% url 'polls:call_changepassword' %}" class="lin" id="change password">Change Password</a><br><br><br><br>
+<a href="{% url 'polls:log_out' %}" class="lin" id="log out">Log Out</a>
+<div class="foot">
+&copy Ankita@IMG 16
+</div>
 </body>
