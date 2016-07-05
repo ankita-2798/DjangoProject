@@ -1,11 +1,31 @@
+<html>
+<body>
 {% load staticfiles %}
-<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'polls/index.css' %}">
 {% if latest_question_list %}
+	<div class="header">
+	<img src="{{STATIC_URL}}polls/images/IITR.jpeg" alt="IITR" id="IITR">
+	<span id="h1">IMG Polls</span>
+	<img src="{{STATIC_URL}}polls/images/IMG.jpeg" alt="IMG" id="IMG">
+	</div>
+	<p class="heading">Hello {{user.get_username}}</p>
+	<div class="body">
 	<ul>
 	{% for question in latest_question_list %}
-	<li><a href="{% url 'polls:detail' question.id %}">{{question.question_text}}</a></li>
+	<div class="ques"><li><a href="{% url 'polls:detail' question.id %}" class="options">{{question.question_text}}</a></li></div>
 	{% endfor %}
 	</ul>
+	</div>
 	{% else %}
-	<p> No Polls available.<p>
+	<p class="message"> No Polls available.<p>
 	{% endif %}
+	<div class="button-links">
+	<a href="{% url 'polls:call_editprofile' %}" class="link" id="edit profile">Edit Profile</a>
+	<a href="{% url 'polls:call_changepassword' %}" class="link" id="change password">Change Password</a>
+	<a href="{% url 'polls:log_out' %}" class="link" id="log out">Log Out</a>
+	</div>
+	<div class="foot">
+	&copy Ankita@IMG 16
+	</div>
+</body>
+</html>

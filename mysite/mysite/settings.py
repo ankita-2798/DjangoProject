@@ -48,9 +48,8 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
-
+LOGIN_URL = '../../../polls/login/'
 ROOT_URLCONF = 'mysite.urls'
-
 WSGI_APPLICATION = 'mysite.wsgi.application'
 
 

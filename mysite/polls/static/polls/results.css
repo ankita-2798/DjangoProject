@@ -1,0 +1,118 @@
+body
+{
+background-image:url("images/abstract-grey-wallpaper03.jpg");
+background-size:cover;
+background-repeat: no-repeat;
+background-position:center center;
+}
+.body
+{
+border:2px ridge #DCDCDC;
+border-radius:20px;
+height:300px;
+width:500px;
+margin:auto;
+position:absolute;
+top:0;
+bottom:0;
+right:0;
+left:0;
+font-size:150%;
+}
+.header
+{
+	padding:10px;
+	border:2px ridge #DCDCDC;
+	border-radius:20px;
+}
+#IITR
+{
+	float:left;
+	height:70px;
+	width:70px;
+}
+#h1
+{	
+	font-size:60px;
+	margin-left:35%;
+	color:white;
+}
+#IMG
+{
+	float:right;
+	height:70px;
+	width:70px;
+}
+#h2
+{
+	color:white;
+	text-align:center;
+	font-size:150%;
+	margin-top:10px;
+	margin-bottom:10px;
+}
+ul li
+{
+	margin:20px;
+	margin-left:0px;
+	border:0.5px ridge white;
+	list-style-position:inside;
+	font-size:123%;
+	background-color:white;
+	color:black;
+	border-radius:10px;
+	padding-left:10px;
+}
+.link
+{	
+	margin-left:37%;
+	border:2px ridge #DCDCDC;
+	padding:10px;
+	font-size:80%;
+	background-color:Transparent;
+	text-decoration: none;
+	color:white;
+	border-radius:4px;
+}
+.heading
+{
+	font-size:200%;
+	color:white;
+}
+a.lin:link,a.lin:active, a.lin:visited
+{	
+	border:2px ridge #DCDCDC;
+	padding:10px;
+	font-size:100%;
+	background-color:Transparent;
+	text-decoration: none;
+	color:white;
+	border-radius:4px;
+}
+a.lin:hover
+{
+	border:2px ridge #DCDCDC;
+	padding:10px;
+	font-size:100%;
+	background-color:#DCDCDC;
+	text-decoration: none;
+	color:black;
+	border-radius:4px;
+}
+.foot
+{
+background-color:Transparent;
+text-align:center;
+position:fixed;
+bottom:0;
+width:98%;
+color:white;
+padding:7px;
+border:2px ridge #DCDCDC;
+border-radius:10px;
+}
+.button-links
+{
+	float:right;
+	margin-top:-70px;
+}

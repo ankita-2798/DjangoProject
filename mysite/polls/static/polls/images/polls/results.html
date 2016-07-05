@@ -6,7 +6,6 @@
 <span id="h1">IMG Polls</span>
 <img src="{{STATIC_URL}}polls/images/IMG.jpeg" alt="IMG" id="IMG">
 </div>
-<p class="heading">Hello {{user.get_username}}</p>
 <div class="body">
 <h2 id="h2">{{question.question_text}}</h2>
 <ul>
@@ -15,14 +14,5 @@
 {% endfor %}
 </ul>
 <a href="{%url 'polls:detail' question.id%}" class="link">Vote Again?</a>
-</div>
-<div class="button-links">
-<a href="{%url 'polls:index'%}" class="lin" id="index">View Index</a>
-<a href="{% url 'polls:call_editprofile' %}" class="lin" id="edit profile">Edit Profile</a>
-<a href="{% url 'polls:call_changepassword' %}" class="lin" id="change password">Change Password</a>
-<a href="{% url 'polls:log_out' %}" class="lin" id="log out">Log Out</a>
-</div>
-<div class="foot">
-&copy Ankita@IMG 16
 </div>
 </body>
